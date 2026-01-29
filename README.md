@@ -15,7 +15,7 @@ A specialized agent designed to generate high-quality Verilog/SystemVerilog RTL,
 ## Prerequisites
 
 - **Icarus Verilog**: For simulation (`iverilog`, `vvp`).
-  - Windows: [Bleeding Edge Builds](http://bleeding-edge.com/) (Ensure added to PATH)
+  - Windows: [Bleeding Edge Builds](https://bleyer.org/icarus/) (Ensure added to PATH)
 - **GTKWave**: For waveform viewing.
 
 ## Usage
