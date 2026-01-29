@@ -11,7 +11,11 @@ def run_simulation(top_module, testbench_path, source_files=None, defines=None, 
     tb_full = os.path.join(WORKSPACE_ROOT, testbench_path)
     src_full = [os.path.join(WORKSPACE_ROOT, s) for s in source_files]
 
-    build_cmd = ["iverilog", "-o", "sim.out", tb_full] + src_full + defines + flags
+    # Use absolute paths for Windows environment
+    iverilog_bin = r"C:\iverilog\bin\iverilog.exe"
+    vvp_bin = r"C:\iverilog\bin\vvp.exe"
+
+    build_cmd = [iverilog_bin, "-o", "sim.out", tb_full] + src_full + defines + flags
     build = subprocess.run(build_cmd, capture_output=True, text=True)
 
     if build.returncode != 0:
@@ -23,7 +27,7 @@ def run_simulation(top_module, testbench_path, source_files=None, defines=None, 
             "vcd_path": None
         }
 
-    run = subprocess.run(["vvp", "sim.out"], capture_output=True, text=True)
+    run = subprocess.run([vvp_bin, "sim.out"], capture_output=True, text=True)
 
     vcd_path = None
     if os.path.exists("dump.vcd"):
