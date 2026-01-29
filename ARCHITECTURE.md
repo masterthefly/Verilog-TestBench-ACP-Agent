@@ -6,9 +6,9 @@ The agent operates as an intelligent loop between the user, the codebase, and th
 
 ```mermaid
 graph TD
-    User[User / Editor] -->|Request| Agent[Verilog ACP Agent]
-    Agent -->|Read/Write| Files[Verilog Files]
-    Agent -->|Execute| Sim[Simulator (iverilog)]
+    User["User / Editor"] -->|Request| Agent["Verilog ACP Agent"]
+    Agent -->|Read/Write| Files["Verilog Files"]
+    Agent -->|Execute| Sim["Simulator (iverilog)"]
     Sim -->|Logs/VCD| Agent
     Agent -->|Response/Diffs| User
 ```
