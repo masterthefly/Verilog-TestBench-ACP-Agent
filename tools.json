@@ -1,0 +1,119 @@
+[
+  {
+    "name": "file_read",
+    "description": "Read the contents of a text file from the workspace.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "string",
+          "description": "Path to the file, relative to the workspace root."
+        }
+      },
+      "required": ["path"]
+    }
+  },
+  {
+    "name": "file_write",
+    "description": "Write text content to a file in the workspace, creating it if necessary.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "string",
+          "description": "Path to the file, relative to the workspace root."
+        },
+        "content": {
+          "type": "string",
+          "description": "Full file content to write."
+        }
+      },
+      "required": ["path", "content"]
+    }
+  },
+  {
+    "name": "apply_diff",
+    "description": "Apply an ACP-style diff to one or more files in the workspace.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "diff": {
+          "type": "object",
+          "description": "ACP-style diff object describing file edits."
+        }
+      },
+      "required": ["diff"]
+    }
+  },
+  {
+    "name": "run_simulation",
+    "description": "Compile and run a Verilog/SystemVerilog testbench using the configured simulator.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "top_module": {
+          "type": "string",
+          "description": "Name of the top-level module under test."
+        },
+        "testbench_path": {
+          "type": "string",
+          "description": "Path to the testbench file, relative to the workspace root."
+        },
+        "source_files": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Additional source files (RTL) to include in compilation."
+        },
+        "defines": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Optional `+define+` or `-D` style defines."
+        },
+        "flags": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Extra flags to pass to the simulator."
+        }
+      },
+      "required": ["top_module", "testbench_path"]
+    }
+  },
+  {
+    "name": "lint_verilog",
+    "description": "Run a Verilog/SystemVerilog linter on a file.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "string",
+          "description": "Path to the file to lint, relative to the workspace root."
+        }
+      },
+      "required": ["path"]
+    }
+  },
+  {
+    "name": "waveform_extract",
+    "description": "Extract a summary of selected signals from a VCD file.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "vcd_path": {
+          "type": "string",
+          "description": "Path to the VCD file, relative to the workspace root."
+        },
+        "signals": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "List of signal names to inspect."
+        },
+        "max_events": {
+          "type": "integer",
+          "description": "Maximum number of events per signal to return.",
+          "default": 20
+        }
+      },
+      "required": ["vcd_path", "signals"]
+    }
+  }
+]
