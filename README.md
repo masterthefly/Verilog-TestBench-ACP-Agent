@@ -4,7 +4,7 @@
 
 A specialized agent designed to generate high-quality Verilog/SystemVerilog RTL, testbenches, and UVM components. It integrates with editors via the Agent Client Protocol (ACP) to provide a seamless hardware design workflow.
 
-## 🏗️ Architecture
+## Architecture
 
 The agent operates as an intelligent loop, bridging the gap between natural language requirements and rigorous hardware verification.
 
@@ -17,7 +17,7 @@ graph TD
     Agent -->|Response/Diffs| User
 ```
 
-## 🚀 Workflow
+## Workflow
 
 The agent follows a strict **Plan → Act → Verify** cycle to ensure design correctness:
 
@@ -27,7 +27,7 @@ The agent follows a strict **Plan → Act → Verify** cycle to ensure design co
 4.  **Verify**: It autonomously compiles and simulates the design.
 5.  **Debug**: If simulation fails, it analyzes logs/waveforms and iteratively fixes the code.
 
-## 🛠️ Tool Manifest
+## Tool Manifest
 
 The agent is equipped with specialized tools to handle the hardware design lifecycle:
 
@@ -40,7 +40,7 @@ The agent is equipped with specialized tools to handle the hardware design lifec
 | `lint_verilog`     | Checks for syntax errors before simulation.            |
 | `waveform_extract` | Analyzes VCD files to debug signal timing issues.      |
 
-## 💡 Example
+## Example
 
 **User Input:**
 
@@ -86,7 +86,7 @@ VCD info: dumpfile dump.vcd opened for output.
 tests passed: counter reached 15.
 ```
 
-## 📦 Setup & Prerequisites
+## Setup & Prerequisites
 
 1.  **Icarus Verilog**: [Download (Windows)](https://bleyer.org/icarus/)
     - Ensure `iverilog` and `vvp` are in your PATH.
