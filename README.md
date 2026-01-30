@@ -2,7 +2,7 @@
 
 **Hardware-Aware Autonomous Coding Agent**
 
-A specialized agent designed to generate high-quality Verilog/SystemVerilog RTL, testbenches, and UVM components. It integrates with editors via the Agent Client Protocol (ACP) to provide a seamless hardware design workflow.
+A specialized agent **powered by Gemini 3**, designed to generate high-quality Verilog/SystemVerilog RTL, testbenches, and UVM components. It integrates with editors via the Agent Client Protocol (ACP) to provide a seamless hardware design workflow.
 
 ## Architecture
 
